@@ -1,4 +1,4 @@
-# Report CSE 3502 Operating Systems Project 2 - Pthread
+# Report of code logic in parallel-template.c
 Here is a breakdown of my code logic, line by line. I used "int count = 0;" to establish a local counter set to zero. This will reset each thread back to zero. Then I calculate the size for each thread with this equation "int part = n1 / NUM_THREADS;". "n1" represents how many characters are in the first text section, and "NUM_THREADS" represents 10. We then calculate which thread to start with "int start = t * part;".
 
 An "int end;" variable was created to store the last position. An if-else statement was created to handle the following conditions. In this statement, "if (t == NUM_THREADS - 1) end = n1 - n2;" is used to check if we are at the last thread. If we are, it subtracts the difference between the two strings. This is to ensure that the last possible position where "s2" can appear in "s1" is included. For example: s1 = 100 and s2 = 5. The last possible place for s2 to start is 95. This would prevent an error like it starting at 96; hence, positions 96–99 would not have enough characters left to match all of s2.
