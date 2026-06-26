@@ -1,0 +1,5 @@
+gcc parallel-template.c -o parallel-template.o -pthread
+./project-pthread.o
+
+
+./parallel-template.o
